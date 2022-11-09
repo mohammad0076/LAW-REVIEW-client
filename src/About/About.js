@@ -9,7 +9,7 @@ const About = () => {
                     <h1 className="text-5xl font-bold">About myself</h1>
                     <h1 className="text-2xl font-semibold mt-1">Adv. ABBAS Uddin</h1>
 
-                    <p className="py-6 font-semibold"> Tax Consultant And Lawyear Dhaka Judge Court</p>
+                    <p className="py-6 font-semibold"> Tax Consultant And Lawyer Dhaka Judge Court</p>
                     <button className="btn btn-primary">View More</button>
                 </div>
             </div>
