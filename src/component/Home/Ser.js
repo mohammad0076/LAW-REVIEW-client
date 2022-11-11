@@ -5,7 +5,7 @@ import ServiceL from '../../Servicel/ServiceL';
 const Ser = ({ services }) => {
     return (
         <div className='my-10'>
-            <div className='grid grid-rows-1 grid-flow-col gap-4 '>
+            <div className='md:grid grid-rows-1 grid-flow-col gap-4 '>
                 {
                     services.map(service => <ServiceL service={service}></ServiceL>)
                 }

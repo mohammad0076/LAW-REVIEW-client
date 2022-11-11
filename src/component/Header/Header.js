@@ -1,13 +1,64 @@
-import React from 'react';
+import React, { useContext, Image } from 'react';
 import { Link } from 'react-router-dom'
+import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 import logo from './../Footer/logo.svg'
-
+import { BeakerIcon, FaceFrownIcon } from '@heroicons/react/24/solid'
 const Header = () => {
+    const { user, logout } = useContext(AuthContext)
+    const handlelogout = () => {
+        logout()
+            .then(() => { }).catch(error => console.error(error))
+    }
 
 
     const manu = <>
 
         <li className='font-semibold'><Link to='/'>Home</Link></li>
+        <li className='font-semibold'><Link to='/blogs'>Blogs</Link></li>
+
+
+        <Link>{
+            user?.uid ?
+                <>
+                    <div className='flex flex-row ...'>
+                        <li className='font-semibold mt-3 mr-2'>{user?.displayName}</li>
+                        <li className='font-semibold' onClick={handlelogout} ><Link to='/login'>LogOut</Link></li>
+                        <li className='font-semibold'><Link to='/myreviews'>My Reviews</Link></li>
+                        <li className='font-semibold'><Link to='/addedservices'>Added Services</Link></li>
+
+
+
+                    </div>
+
+
+
+
+
+
+                </>
+                :
+                <><div className='flex flex-row ...'>
+                    <li className='font-semibold'><Link to='/login'>Log in</Link></li>
+                    <li className='font-semibold'><Link to='/signup'>signup</Link></li>
+
+                </div>
+
+                </>
+        }</Link>
+        <Link>
+
+            {
+                user?.photoURL ?
+
+                    <img src={user?.photoURL} style={{ height: '50px', width: '50px', borderRadius: '50%' }} alt="" />
+                    :
+                    <FaceFrownIcon></FaceFrownIcon>
+            }
+        </Link>
+
+
+
+
     </>
     return (
         <div className="navbar bg-primary text-primary-content h-20">
@@ -31,9 +82,7 @@ const Header = () => {
 
                 </ul>
             </div>
-            <div className="navbar-end">
-                <a className="btn bg-rose-500">Get started</a>
-            </div>
+
         </div>
     );
 };

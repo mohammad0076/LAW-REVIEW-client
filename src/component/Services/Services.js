@@ -5,7 +5,7 @@ import { useLoaderData } from 'react-router-dom'
 const Services = () => {
 
     const services = useLoaderData()
-    console.log(services)
+
 
     return (
         <div>
@@ -13,7 +13,7 @@ const Services = () => {
             <h2 className='text-3xl font-semibold text-center'>Our Tax Services Categories</h2>
 
 
-            <div className='grid grid-rows-2 grid-flow-col gap-2 mr-56 '>
+            <div className='md:grid grid-rows-2 grid-flow-col gap-2 mr-56 '>
 
                 {
                     services.map(service => <Cart service={service}></Cart>)
