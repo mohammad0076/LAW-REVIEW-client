@@ -30,11 +30,7 @@ const Myrow = ({ mail }) => {
                     <br />
                     <span className="badge badge-ghost badge-sm">{customer}</span>
                 </td>
-                <td>
-                    Service name
-                    <br />
-                    <span className="badge badge-ghost badge-sm">{comment}</span>
-                </td>
+
             </tr>
         </div>
     );
