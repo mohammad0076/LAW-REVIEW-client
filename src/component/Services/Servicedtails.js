@@ -29,7 +29,7 @@ const Servicedtails = () => {
             customer: name,
             email
         }
-        fetch('http://localhost:5000/ommens', {
+        fetch('https://server-law.vercel.app/ommens', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -5,7 +5,7 @@ const Srr = () => {
 
     const [review, setReview] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/all`).then(res => res.json()).then(data => setReview(data))
+        fetch(`https://server-law.vercel.app/all`).then(res => res.json()).then(data => setReview(data))
     })
 
     return (

@@ -5,13 +5,16 @@ import Orderrow from './Orderrow';
 const SeeOr = () => {
     const { user } = useContext(AuthContext)
     const [orders, setOrder] = useState([])
+    {
+        console.log(orders)
+    }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders?email=${user.email}`).then(res => res.json()).then(data => setOrder(data))
+        fetch(`https://server-law.vercel.app/orders?email=${user?.email}`).then(res => res.json()).then(data => setOrder(data))
     }, [user?.email])
     return (
         <div>
-            <h2 className='text-center font-extrabold'>You have {orders.length} ORDERS</h2>
+            <h2 className='text-center font-extrabold'>You have {orders.length} Service Request</h2>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
 
@@ -45,6 +48,7 @@ const SeeOr = () => {
 
                 </table>
             </div>
+
         </div>
     );
 };

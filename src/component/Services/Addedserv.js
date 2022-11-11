@@ -22,7 +22,7 @@ const Addedserv = () => {
             email
 
         }
-        fetch('http://localhost:5000/orders', {
+        fetch('https://server-law.vercel.app/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

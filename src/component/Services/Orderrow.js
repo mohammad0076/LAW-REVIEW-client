@@ -5,6 +5,9 @@ import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 const Orderrow = ({ order }) => {
     const { user } = useContext(AuthContext)
     const { NameofService, price, customer, email } = order;
+    {
+        console.log(order)
+    }
     return (
         <tr>
             <th>
@@ -28,10 +31,7 @@ const Orderrow = ({ order }) => {
                 <br />
                 <span className="badge badge-ghost badge-sm">{price} taka</span>
             </td>
-            <td>Purple</td>
-            <th>
-                <button className="btn btn-ghost btn-xs">{user}</button>
-            </th>
+
         </tr>
     );
 };

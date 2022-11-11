@@ -3,16 +3,20 @@ import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 import Myrow from './Myrow';
 
 const Myreviews = ({ name, src }) => {
-    const { user } = useContext(AuthContext)
-    const [mymail, setMail] = useState([])
+    // const { user } = useContext(AuthContext)
+    // const [mymail, setMail] = useState({})
+    // {
+    //     console.log(mymail)
+    // }
 
-    useEffect(() => {
-        fetch(`http://localhost:5000/ommens?email=${user.email}`).then(res => res.json()).then(data => setMail(data))
-    }, [user?.email])
+    // useEffect(() => {
+    //     fetch(`https://server-law.vercel.app/ommens?email=${user.email}`).then(res => res.json()).then(data => setMail(data))
+    // }, [user?.email])
 
     return (
         <div>
-            <div>
+            <h1>here</h1>
+            {/* <div>
                 <h2 className='text-center font-extrabold'>you have {mymail.length} review</h2>
                 <div className="overflow-x-auto w-full">
                     <table className="table w-full">
@@ -46,7 +50,7 @@ const Myreviews = ({ name, src }) => {
 
                     </table>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 };

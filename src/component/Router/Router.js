@@ -21,17 +21,17 @@ const Router = () => {
             children: [
                 {
                     path: '/',
-                    loader: () => fetch('http://localhost:5000/servicesl'),
+                    loader: () => fetch('https://server-law.vercel.app/servicesl'),
                     element: <Home></Home>
                 },
                 {
                     path: '/services',
-                    loader: () => fetch('http://localhost:5000/services'),
+                    loader: () => fetch('https://server-law.vercel.app/services'),
                     element: <Services></Services>
                 },
                 {
                     path: '/services/:id',
-                    loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`),
+                    loader: ({ params }) => fetch(`https://server-law.vercel.app/services/${params.id}`),
                     element: <Servicedtails></Servicedtails>
                 },
                 {
@@ -51,7 +51,7 @@ const Router = () => {
                 },
                 {
                     path: '/addedservices/:id',
-                    loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`),
+                    loader: ({ params }) => fetch(`https://server-law.vercel.app/services/${params.id}`),
 
                     element: <Private><Addedserv></Addedserv></Private>
                 }, {
@@ -62,7 +62,7 @@ const Router = () => {
                     path: '*', element: <div>This route not found go to hell</div>
                 }, {
                     path: '/showcoments',
-                    loader: fetch('http://localhost:5000/ommens'),
+                    loader: fetch('https://server-law.vercel.app/ommens'),
                     element: <Showcom></Showcom>
 
                 }, {
@@ -71,7 +71,7 @@ const Router = () => {
                     element: <Blogs></Blogs>
                 }, {
                     path: '/sr',
-                    loader: () => fetch('http://localhost:5000/services'),
+                    loader: () => fetch('https://server-law.vercel.app/services'),
 
                     element: <Srr3></Srr3>
                 }

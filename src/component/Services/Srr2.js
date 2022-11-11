@@ -6,7 +6,7 @@ const Srr2 = ({ revie }) => {
     const [orders, setOrder] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/all?comment=${revie.comment}`).then(res => res.json()).then(data => setOrder(data))
+        fetch(`https://server-law.vercel.app/all?comment=${revie.comment}`).then(res => res.json()).then(data => setOrder(data))
     }, [revie.comment])
     return (
         <div>
